@@ -1,28 +1,28 @@
 import { useState } from "react";
 
-function Card({ nombre, descripcion, informacion, boton }) {
+function Card({ categoria, nombre, descripcion, informacion }) {
+  const [mostrarDetalle, setMostrarDetalle] = useState(false);
 
-    const [mostrarInformacion, setMostrarInformacion] = useState(false);
+  return (
+    <div className="tarjeta">
+      <div className="badge-categoria">{categoria}</div>
+      <h2>{nombre}</h2>
+      <p>{descripcion}</p>
 
-    function mostrarMensaje() {
-        setMostrarInformacion(!mostrarInformacion);
-    }
+      <button 
+        className="btn-ver-mas" 
+        onClick={() => setMostrarDetalle(!mostrarDetalle)}
+      >
+        {mostrarDetalle ? "Ver menos" : "Ver más"}
+      </button>
 
-    return (
-        <article>
-            <h2>{nombre}</h2>
-
-            <p>{descripcion}</p>
-
-            <button onClick={mostrarMensaje}>
-                {boton}
-            </button>
-
-            {mostrarInformacion && (
-                <p>{informacion}</p>
-            )}
-        </article>
-    );
+      {mostrarDetalle && (
+        <div className="detalle-info">
+          <p>{informacion}</p>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Card;

@@ -1,0 +1,99 @@
+/* Tarjeta principal */
+.tarjeta {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: 14px;
+  padding: 24px;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Franja superior combinada Azul + Grana */
+.tarjeta-franja-blaugrana {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blaugrana-azul) 50%, var(--blaugrana-grana) 50%);
+}
+
+/* Indicador decorativo (Badge) */
+.tarjeta-tag {
+  background-color: rgba(0, 77, 152, 0.25);
+  color: #60a5fa;
+  border: 1px solid rgba(0, 77, 152, 0.4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  letter-spacing: 0.8px;
+}
+
+.tarjeta-titulo {
+  color: var(--texto-blanco);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.tarjeta-descripcion {
+  color: var(--texto-secundario);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Botón de la tarjeta */
+.tarjeta-btn {
+  background-color: var(--blaugrana-azul);
+  color: var(--texto-blanco);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.tarjeta-btn:hover {
+  background-color: var(--blaugrana-grana);
+}
+
+/* Estado cuando está mostrando la información */
+.tarjeta-btn.activo {
+  background-color: var(--blaugrana-grana);
+  color: var(--texto-blanco);
+}
+
+.tarjeta-btn.activo:hover {
+  background-color: #800034;
+}
+
+/* Texto desplegable */
+.tarjeta-info-extra {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--borde-tarjeta);
+  color: var(--texto-secundario);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-align: left;
+}
